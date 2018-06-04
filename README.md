@@ -1,4 +1,4 @@
-##Vue的component组件机制剖析
+## Vue的component组件机制剖析
 
 ### Vue的组件到底是什么？？
 平常我们使用类似如下
