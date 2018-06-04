@@ -7,17 +7,17 @@ import *** from '**/**'
 ```
 的方式获取单文件组件，里面的内容如下：
 ```
-&lt;template&gt
-  &lt;div&gt;&lt;/div&gt;
-&lt;/template&gt
-&lt;script&gt
+<template>
+  <div></div>
+</template>
+<script>
   export default {
     data () {
       return {}
     }
   }
-&lt;/script&gt;
-&lt;style&gt;&lt;/style&gt
+</script>
+<style></style>
 ```
 但是在JS中"一切皆对象"，那么组件到底是对象吗？，可以打印这个引用组件的对象看看其形式：<br>
 ![ComObject](./src/assets/img/component.png)
@@ -147,7 +147,7 @@ advance函数: 修改当前处理标记索引，并且将html已处理部分截�
 ```
 parseStartTag函数: 处理开始标签，将属性放入attrs中，如
 ```
-template = &lt;div id="app">&lt;div>&lt;span>{{message}}&lt;/span>&lt;/div>&lt;/div&gt;
+template = <div id="app"><div><span>{{message}}</span></div></div>
 ```
 程序第一次进入该函数 匹配的是div标签 所以tagName就是div，start：0 end:14，如图：
 <img src='https://segmentfault.com/img/bVWvOT?w=299&h=252'>
@@ -416,26 +416,26 @@ render函数会调用vm._c('my-component'），_createElement判断my-component�
 ## 函数式组件
 上面主要是讲到template组件在Vue的内部如何被解析和转换，然而在某些场景需要你用JavaScript编程的能力，即render函数，比template更接近编译器。如下场景：
 ```
-  &lt;script type="text/x-template" id="anchored-heading-template">
-    &lt;h1 v-if="level === 1">
-      &lt;slot>&lt;/slot>
-    &lt;/h1>
-    &lt;h2 v-else-if="level === 2">
-      &lt;slot>&lt;/slot>
-    &lt;/h2>
-    &lt;h3 v-else-if="level === 3">
-      &lt;slot>&lt;/slot>
-    &lt;/h3>
-    &lt;h4 v-else-if="level === 4">
-      &lt;slot>&lt;/slot>
-    &lt;/h4>
-    &lt;h5 v-else-if="level === 5">
-      &lt;slot>&lt;/slot>
-    &lt;/h5>
-    &lt;h6 v-else-if="level === 6">
-      &lt;slot>&lt;/slot>
-    &lt;/h6>
-  &lt;/script>
+  <script type="text/x-template" id="anchored-heading-template">
+    <h1 v-if="level === 1">
+      <slot></slot>
+    </h1>
+    <h2 v-else-if="level === 2">
+      <slot></slot>
+    </h2>
+    <h3 v-else-if="level === 3">
+      <slot></slot>
+    </h3>
+    <h4 v-else-if="level === 4">
+      <slot></slot>
+    </h4>
+    <h5 v-else-if="level === 5">
+      <slot></slot>
+    </h5>
+    <h6 v-else-if="level === 6">
+      <slot></slot>
+    </h6>
+  </script>
 ```
 在这种场景中使用 template 并不是最好的选择：首先代码冗长，为了在不同级别的标题中插入锚点元素，我们需要重复地使用 <slot></slot>。现在尝试用render函数重写：
 ```
