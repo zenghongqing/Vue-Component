@@ -47,7 +47,7 @@ Vue.prototype._init = function (options) {
   }
 }
 ```
-在mounted阶段执行由compileToFunctions将template转换为render函数如下：
+在mount阶段执行由compileToFunctions将template转换为render函数如下：
 ```
   Vue.prototype.$mount = function () {
     var ref = compileToFunctions(template, {
