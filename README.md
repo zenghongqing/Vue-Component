@@ -567,6 +567,7 @@ props, 事件, slots, 通用的写法如下：
 ```
 场景：
 在N个(下面以两个为例子)独立页面功能完成后，需要增加权限控制的功能。有的页面需要特定的用户权限才能进入，否则如果强行输入url进入的话，会提示“没有权限访问本页面”
+一般的方法：
 可创建高阶组件right-hoc.js：
 ```
   import NoRightTips from './no-right-tips';
@@ -591,12 +592,12 @@ page1.vue和page2.vue如下：
 ```
   /**************** page1.vue ****************/
   export default {
-    template: `&lt;div>欢迎访问传说中的 page1 !</div>`,
+    template: `<div>欢迎访问传说中的 page1 !</div>`,
   }
   
   /**************** page2.vue ****************/
   export default {
-    template: `&lt;div>欢迎访问传说中的 page2 !</div>`,
+    template: `<div>欢迎访问传说中的 page2 !</div>`,
   }
 ```
 路由配置：routes.js
