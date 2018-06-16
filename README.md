@@ -179,7 +179,7 @@ template = <div id="app"><div><span>{{message}}</span></div></div>
     }
 ```
 handleStartTag: 将parseStartTag处理的结果循环转换为：
-<img src='https://segmentfault.com/img/bVWuQZ?w=263&h=245'>
+<img src='https://segmentfault.com/img/bVWuQZ?w=263&h=245'><br>
 最后通过options.start生成ast node
 ```
 /**
@@ -260,7 +260,7 @@ parseEndTag函数: 处理结束标签
   }
 ```
 这个过程主要是将template字符串转换为树的结构，AST对象的基本结构为：
-<img src='https://segmentfault.com/img/bVXLK9?w=1459&h=288'>
+<img src='https://segmentfault.com/img/bVXLK9?w=1459&h=288'><br>
 然后对AST结构进行优化，找出AST对象中所有的最大静态子树
 ```
   function optimize(root, options) {
@@ -329,9 +329,9 @@ parseEndTag函数: 处理结束标签
   }
 ```
 最后生成
-<img src='https://images2015.cnblogs.com/blog/858904/201706/858904-20170613103036478-1428596106.png'>
+<img src='https://images2015.cnblogs.com/blog/858904/201706/858904-20170613103036478-1428596106.png'><br>
 generate函数生成的总的对象为：
-<img src='https://images2015.cnblogs.com/blog/858904/201706/858904-20170613104238728-167937100.png'>
+<img src='https://images2015.cnblogs.com/blog/858904/201706/858904-20170613104238728-167937100.png'><br>
 此时在返回到compileToFunctions
 ```
   function compileToFunctions(template, options, vm) {
