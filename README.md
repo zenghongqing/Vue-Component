@@ -178,8 +178,8 @@ template = <div id="app"><div><span>{{message}}</span></div></div>
       }
     }
 ```
-handleStartTag: 将parseStartTag处理的结果循环转换为：
-<img src='https://segmentfault.com/img/bVWuQZ?w=263&h=245'>
+handleStartTag: 将parseStartTag处理的结果循环转换为：<br>
+<img src='https://segmentfault.com/img/bVWuQZ?w=263&h=245'><br>
 最后通过options.start生成ast node
 ```
 /**
